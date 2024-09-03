@@ -1,11 +1,17 @@
-import { StyleSheet } from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 
 export default function TabTwoScreen() {
+  const pressme = () => {
+    console.log('Pressed');
+  }
   return (
     <View style={styles.container}>
+      <Pressable onPress={() => pressme()} style={{ padding: 10 }}>
+        <Text>Press me</Text>
+      </Pressable>
       <Text style={styles.title}>Tab Two</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="app/(tabs)/two.tsx" />
